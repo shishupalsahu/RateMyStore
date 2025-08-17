@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
 
+// Import routes
+const userRoutes = require('./routes/userRoutes');
+
 const app = express();
 
 app.use(cors());
@@ -18,6 +21,9 @@ mongoose.connect(uri)
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the RateMyStore API!' });
 });
+
+// Use the user routes
+app.use('/api/users', userRoutes);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
