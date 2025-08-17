@@ -7,6 +7,7 @@ require('dotenv').config();
 
 // Import routes
 const userRoutes = require('./routes/userRoutes');
+const storeRoutes = require('./routes/storeRoutes'); // NEW
 
 const app = express();
 
@@ -22,8 +23,9 @@ app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the RateMyStore API!' });
 });
 
-// Use the user routes
+// Use the routes
 app.use('/api/users', userRoutes);
+app.use('/api/stores', storeRoutes); // NEW
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
