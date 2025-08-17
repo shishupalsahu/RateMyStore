@@ -2,10 +2,13 @@
 
 const express = require('express');
 const router = express.Router();
-const { createStore } = require('../controllers/storeController');
+// UPDATE THE IMPORT
+const { createStore, getStores } = require('../controllers/storeController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
-// Only a logged-in System Administrator can access this route
-router.route('/').post(protect, admin, createStore);
+// Chaining the route handlers for the same endpoint '/'
+router.route('/')
+  .post(protect, admin, createStore) // POST is for creating (Admin only)
+  .get(protect, getStores);         // GET is for fetching (Any logged-in user)
 
 module.exports = router;
