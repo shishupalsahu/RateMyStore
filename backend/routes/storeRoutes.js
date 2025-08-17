@@ -3,12 +3,14 @@
 const express = require('express');
 const router = express.Router();
 // UPDATE THE IMPORT
-const { createStore, getStores } = require('../controllers/storeController');
+const { createStore, getStores, createStoreRating } = require('../controllers/storeController');
 const { protect, admin } = require('../middleware/authMiddleware');
 
-// Chaining the route handlers for the same endpoint '/'
 router.route('/')
-  .post(protect, admin, createStore) // POST is for creating (Admin only)
-  .get(protect, getStores);         // GET is for fetching (Any logged-in user)
+  .post(protect, admin, createStore)
+  .get(protect, getStores);
+
+// NEW ROUTE for submitting/updating a rating for a specific store
+router.route('/:id/ratings').post(protect, createStoreRating);
 
 module.exports = router;

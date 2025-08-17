@@ -2,6 +2,21 @@
 
 const mongoose = require('mongoose');
 
+// NEW: Define a schema for individual ratings
+const ratingSchema = mongoose.Schema(
+  {
+    rating: { type: Number, required: true, min: 1, max: 5 },
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      required: true,
+      ref: 'User', // Creates a reference to the User model
+    },
+  },
+  {
+    timestamps: true,
+  }
+);
+
 const storeSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -19,7 +34,18 @@ const storeSchema = new mongoose.Schema({
         required: true,
         maxlength: 400,
     },
-    // We will add ratings functionality here later
+    // NEW: Add fields to store and calculate ratings
+    ratings: [ratingSchema],
+    numRatings: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
+    averageRating: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
 }, { timestamps: true });
 
 const Store = mongoose.model('Store', storeSchema);
