@@ -1,0 +1,21 @@
+/*
+ * This file imports the Tailwind CSS utility classes.
+ * To make this work, you would typically have a build process (like PostCSS)
+ * that processes these directives.
+ *
+ * For simplicity in our development setup, we will use the Tailwind CDN
+ * directly in our HTML, which achieves the same result without a build step.
+ * However, this file is good practice to have for a production setup.
+ * For now, we can leave it as is, but we will add a script tag to the HTML
+ * to ensure our styles are applied.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles can be added below this line if needed */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}

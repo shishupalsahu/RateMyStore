@@ -1,0 +1,15 @@
+/*
+ * This file is for any custom CSS specific to the main user-facing site.
+ * For now, it will just contain the standard Tailwind directives.
+ * Most of our styling is handled by the Tailwind CSS CDN linked in the HTML.
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom user-facing styles can be added below. */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
