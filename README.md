@@ -22,7 +22,9 @@ Frontend:
 Languages: HTML, CSS, JavaScript
 Styling: Tailwind CSS
 Icons: Font Awesome
-Project Structure
+ 
+# Project Structure
+
 RateMyStore/
 ├── backend/
 │   ├── controllers/
