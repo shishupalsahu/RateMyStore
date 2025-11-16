@@ -1,5 +1,5 @@
 # RateMyStore - A Full-Stack Store Rating Application
-RateMyStore is a complete web application that allows users to register, find local stores, and submit ratings. The application features a robust backend built with Node.js and Express, a MongoDB database, and a secure authentication system. It supports three distinct user roles: Normal User, Store Owner, and System Administrator, each with their own dedicated interface and functionalities.
+RateMyStore is a complete web application that allows users to register, find local stores, and submit ratings. The application features a robust backend built with Node.js and Express, a MySql database, and a secure authentication system. It supports three distinct user roles: Normal User, Store Owner, and System Administrator, each with their own dedicated interface and functionalities.
 
 # Features
 User Authentication: Secure user registration and login system using JSON Web Tokens (JWT). Passwords are encrypted using bcryptjs.
@@ -14,7 +14,7 @@ RESTful API: A well-structured backend API built with Express.js to handle all d
 Backend:
 
 Framework: Node.js, Express.js
-Database: MongoDB (with Mongoose ODM)
+Database: MySql
 Authentication: JSON Web Tokens (JWT), bcryptjs
 
 Frontend:
@@ -53,9 +53,9 @@ npm install
 
 Create your .env file:
 Create a file named .env in the backend folder.
-Add your MongoDB connection string and a JWT secret:
+Add your MySql connection string and a JWT secret:
 
-MONGO_URI=your_mongodb_connection_string
+MySql_URI=your_MySql_connection_string
 JWT_SECRET=your_super_secret_key
 PORT=5000
 
